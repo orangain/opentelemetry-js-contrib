@@ -4,13 +4,7 @@ const { Pool } = require('pg');
 
 // create new pool for psql
 const CONFIG = {
-  password: process.env.POSTGRES_USER || 'postgres',
-  user: process.env.POSTGRES_USER || 'postgres',
-  database: process.env.POSTGRES_DB || 'postgres',
-  host: process.env.POSTGRES_HOST || 'localhost',
-  port: process.env.POSTGRES_PORT
-    ? parseInt(process.env.POSTGRES_PORT, 10)
-    : 54320,
+  connectionString: "postgresql://postgres:postgres@localhost:54320/postgres"
 };
 
 function startPsql() {
